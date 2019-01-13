@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.10.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- Port 80 not 8080 -->
+    <management-center enabled="true">http://localhost:9090/mancenter</management-center>
+
+    <network>
+        <join>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="true">
+                <member-list>
+                    <member>127.0.0.1</member>
+                </member-list>
+            </tcp-ip>
+        </join>
+    </network>
+  <map name="MerchantToken">
+    <backup-count>1</backup-count>
+  </map>
+    <map name="GlobalToken">
+    <backup-count>1</backup-count>
+  </map>
+    <map name="PANToken">
+    <backup-count>1</backup-count>
+  </map>
+</hazelcast>
